@@ -8,4 +8,7 @@
    eJzt1MkKwjAUheHgwlYcd87FouI8vP/TeQsXDKFTTG1u9Cw+XDTC+Uk1UUolbE4WFpbad6V4kpTsyLmGPdmSh4DtppS3NX22rXtw7ZB2J9m2q8p/983fzk3YfWSO/HlS7/f/QrokIrHxTD/je3tV052MyJhMtGc631t1UYkhdwxKzsQCGhLe+Q1td0wdzQTchcl8/8v43tqkDfO9I2+Trs5Z37sBAAAAAAAAAJrWF7DBVQ8dovx7x4H53u/SIWn/px0SG2w7pDbYdEhuqNshvaGqQ9p/km1HSPuLOkJsKLqPEP1Sx4p0ArcmL1E4HEM=
   </data>
  </layer>
+ <objectgroup name="Objects" width="50" height="50">
+  <object name="SpawnPoint" x="71" y="230" width="22" height="25"/>
+ </objectgroup>
 </map>
