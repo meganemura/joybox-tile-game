@@ -9,3 +9,4 @@
 ## Resources
 Download resources from the original tutorial pages.
 Extract them and move to `resources/{arts,sounds}`.
+Execute `cd resources; motion joybox:retina tile_map.tmx`.
