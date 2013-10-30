@@ -9,6 +9,9 @@ class HelloWorldLayer < Joybox::Core::Layer
     tile_layer = @tile_map.tile_layers['Background']
     self << tile_layer
 
+    @foreground = @tile_map.tile_layers['Foreground']
+    self << @foreground
+
     @meta = @tile_map.tile_layers['Meta']
     @meta.visible = false
 
@@ -66,6 +69,12 @@ class HelloWorldLayer < Joybox::Core::Layer
         collision = properties['Collidable']
         if collision && collision == 'True'
           return
+        end
+
+        collectible = properties['Collectible']
+        if collectible && collectible == 'True'
+          @meta.removeTileAt(tile_coord)
+          @foreground.removeTileAt(tile_coord)
         end
       end
     end
