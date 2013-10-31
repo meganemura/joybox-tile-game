@@ -2,7 +2,19 @@ class HelloWorldLayer < Joybox::Core::Layer
 
   include Joybox::TMX
 
-  scene
+  def self.scene
+    scene = CCScene.new
+    layer = self.new
+    scene << layer
+
+    hud = HudLayer.new
+    scene << hud
+    layer.hud = hud
+
+    scene
+  end
+
+  attr_accessor :hud
 
   def on_enter
     @tile_map = TileMap.new(:file_name => 'tile_map.tmx')
@@ -14,6 +26,8 @@ class HelloWorldLayer < Joybox::Core::Layer
 
     @meta = @tile_map.tile_layers['Meta']
     @meta.visible = false
+
+    @num_collected = 0
 
     tile_object = @tile_map.object_layers['Objects']
     spawn_point = tile_object.objectNamed('SpawnPoint')
@@ -75,6 +89,8 @@ class HelloWorldLayer < Joybox::Core::Layer
         if collectible && collectible == 'True'
           @meta.removeTileAt(tile_coord)
           @foreground.removeTileAt(tile_coord)
+          @num_collected += 1
+          self.hud.num_collected_changed(@num_collected)
         end
       end
     end
